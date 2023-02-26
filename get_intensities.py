@@ -6,7 +6,7 @@
 # micha.birklbauer@gmail.com
 
 # version tracking
-__version = "1.0.0"
+__version = "1.0.1"
 __date = "2023-02-26"
 
 # REQUIREMENTS
@@ -205,11 +205,17 @@ if __name__ == "__main__":
     print("INFO: Done reading CSMs!")
 
     tqdm.pandas(desc = "INFO: Progress bar - Alpha Peptides:")
-    csms["Fragment Intensities A"], csms["Matched Ions A"], csms["Theoretical Ions A"] = csms.progress_apply(lambda row: get_intensities(row, True, spectra), axis = 1)
+    csms[["Fragment Intensities A", "Matched Ions A", "Theoretical Ions A"]] = \
+        csms.progress_apply(lambda row: get_intensities(row, True, spectra),
+        axis = 1,
+        result_type = "expand")
     print("INFO: Done processing Alpha Peptides!")
 
     tqdm.pandas(desc = "INFO: Progress bar - Beta Peptides:")
-    csms["Fragment Intensities B"], csms["Matched Ions B"], csms["Theoretical Ions B"] = csms.progress_apply(lambda row: get_intensities(row, False, spectra), axis = 1)
+    csms[["Fragment Intensities B", "Matched Ions B", "Theoretical Ions B"]] = \
+        csms.progress_apply(lambda row: get_intensities(row, False, spectra),
+        axis = 1,
+        result_type = "expand")
     print("INFO: Done processing Beta Peptides!")
 
     csms["Fragment Intensities Total"] = csms.apply(lambda row: row["Fragment Intensities A"] + row["Fragment Intensities B"], axis = 1)
