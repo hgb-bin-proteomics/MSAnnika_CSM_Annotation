@@ -5,6 +5,10 @@
 # https://github.com/michabirklbauer/
 # micha.birklbauer@gmail.com
 
+# version tracking
+__version = "1.0.0"
+__date = "2023-02-26"
+
 # REQUIREMENTS
 # pip install pandas
 # pip install openpyxl
