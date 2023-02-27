@@ -6,7 +6,7 @@
 # micha.birklbauer@gmail.com
 
 # version tracking
-__version = "1.0.1"
+__version = "1.0.2"
 __date = "2023-02-26"
 
 # REQUIREMENTS
@@ -184,7 +184,7 @@ def get_intensities(row: pd.Series, alpha: bool, spectra: Dict[int, Dict]) -> Tu
 
     return total_intensity, matched_fragments, theoretical_fragments
 
-if __name__ == "__main__":
+def main() -> pd.DataFrame:
 
     print("INFO: Running CSMS annotation with input files:\nSpectra: " + SPECTRA_FILE + "\nCSMs: " + CSMS_FILE)
     print("INFO: Using the following modifications:")
@@ -205,14 +205,14 @@ if __name__ == "__main__":
     print("INFO: Done reading CSMs!")
 
     tqdm.pandas(desc = "INFO: Progress bar - Alpha Peptides:")
-    csms[["Fragment Intensities A", "Matched Ions A", "Theoretical Ions A"]] = \
+    csms[["Fragment Intensities A (Sum)", "Matched Ions A", "Theoretical Ions A"]] = \
         csms.progress_apply(lambda row: get_intensities(row, True, spectra),
         axis = 1,
         result_type = "expand")
     print("INFO: Done processing Alpha Peptides!")
 
     tqdm.pandas(desc = "INFO: Progress bar - Beta Peptides:")
-    csms[["Fragment Intensities B", "Matched Ions B", "Theoretical Ions B"]] = \
+    csms[["Fragment Intensities B (Sum)", "Matched Ions B", "Theoretical Ions B"]] = \
         csms.progress_apply(lambda row: get_intensities(row, False, spectra),
         axis = 1,
         result_type = "expand")
@@ -222,3 +222,9 @@ if __name__ == "__main__":
 
     csms.to_excel(".".join(CSMS_FILE.split(".")[:-1]) + "_with_intensities.xlsx")
     print("SUCCESS: Output file generated as '" + ".".join(CSMS_FILE.split(".")[:-1]) + "_with_intensities.xlsx" + "'!")
+
+    return csms
+
+if __name__ == "__main__":
+
+        main()
