@@ -22,7 +22,7 @@ CSMS_FILE = "CSMs_unfiltered.xlsx"
 MODIFICATIONS = \
     {"Oxidation": [15.994915],
      "Carbamidomethyl": [57.021464],
-     "DSSO": [54.01056,  85.98264, 103.99320]}
+     "DSSO": [54.01056, 85.98264, 103.99320]}
 ION_TYPES = ("b", "y")
 MAX_CHARGE = 4
 MATCH_TOLERANCE = 0.02
