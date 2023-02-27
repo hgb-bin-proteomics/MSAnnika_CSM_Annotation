@@ -6,7 +6,7 @@
 # micha.birklbauer@gmail.com
 
 # version tracking
-__version = "1.0.2"
+__version = "1.0.3"
 __date = "2023-02-26"
 
 # REQUIREMENTS
@@ -218,7 +218,7 @@ def main() -> pd.DataFrame:
         result_type = "expand")
     print("INFO: Done processing Beta Peptides!")
 
-    csms["Fragment Intensities Total"] = csms.apply(lambda row: row["Fragment Intensities A"] + row["Fragment Intensities B"], axis = 1)
+    csms["Fragment Intensities Total"] = csms.apply(lambda row: row["Fragment Intensities A (Sum)"] + row["Fragment Intensities B (Sum)"], axis = 1)
 
     csms.to_excel(".".join(CSMS_FILE.split(".")[:-1]) + "_with_intensities.xlsx")
     print("SUCCESS: Output file generated as '" + ".".join(CSMS_FILE.split(".")[:-1]) + "_with_intensities.xlsx" + "'!")
