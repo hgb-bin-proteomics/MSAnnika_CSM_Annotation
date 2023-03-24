@@ -29,6 +29,7 @@ jobs:
         cp get_intensities.py tests
         cp data/20220215_Eclipse_LC6_PepMap50cm-cartridge_mainlib_DSSO_3CV_stepHCD_OT_001.mgf .
         cp data/CSMs_unfiltered.xlsx .
+        cp data/CrosslinkDoublets.txt .
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
