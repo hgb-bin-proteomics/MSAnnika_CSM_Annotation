@@ -38,6 +38,20 @@ DOUBLET_IDENTIFICATION_MODE = "All"
 
 The `DOUBLETS_FILE` parameter is optional, if a file is provided the doublet intensities will also be calculated, otherwise leave the field blank `DOUBLETS_FILE = None` and doublets will not be annotated and no doublet intensities will be calculated. `DOUBLET_IDENTIFICATION_MODE` can either be `"All"` which means all doublets will be considered or `"Evidence"` which means only doublets identified by MS Annika in evidence mode will be considered, or `"Indication"` which means only doublets identified by MS Annika in indication mode will be considered.
 
+## Known Issues
+
+[List of known issues](https://github.com/hgb-bin-proteomics/MSAnnika_CSM_Annotation/issues)
+
+## Citing
+
+If you are using MS Annika please cite:
+```
+MS Annika: A New Cross-Linking Search Engine
+Georg J. Pirklbauer, Christian E. Stieger, Manuel Matzinger, Stephan Winkler, Karl Mechtler, and Viktoria Dorfer
+Journal of Proteome Research 2021 20 (5), 2560-2569
+DOI: 10.1021/acs.jproteome.0c01000
+```
+
 ## License
 
 - [MIT](https://github.com/hgb-bin-proteomics/MSAnnika_CSM_Annotation/blob/master/LICENSE)
