@@ -44,7 +44,22 @@ The `DOUBLETS_FILE` parameter is optional, if a file is provided the doublet int
 
 ## Citing
 
+If you are using the MS Annika CSM Annotation script please cite:
+```
+MS Annika 2.0 Identifies Cross-Linked Peptides in MS2–MS3-Based Workflows at High Sensitivity and Specificity
+Micha J. Birklbauer, Manuel Matzinger, Fränze Müller, Karl Mechtler, and Viktoria Dorfer
+Journal of Proteome Research 2023 22 (9), 3009-3021
+DOI: 10.1021/acs.jproteome.3c00325
+```
+
 If you are using MS Annika please cite:
+```
+MS Annika 2.0 Identifies Cross-Linked Peptides in MS2–MS3-Based Workflows at High Sensitivity and Specificity
+Micha J. Birklbauer, Manuel Matzinger, Fränze Müller, Karl Mechtler, and Viktoria Dorfer
+Journal of Proteome Research 2023 22 (9), 3009-3021
+DOI: 10.1021/acs.jproteome.3c00325
+```
+or
 ```
 MS Annika: A New Cross-Linking Search Engine
 Georg J. Pirklbauer, Christian E. Stieger, Manuel Matzinger, Stephan Winkler, Karl Mechtler, and Viktoria Dorfer
